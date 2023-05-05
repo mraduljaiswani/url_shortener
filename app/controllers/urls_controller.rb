@@ -1,7 +1,7 @@
 class UrlsController < ApplicationController
     def create
       @url = Url.new(url_params)
-      @url.shortened = SecureRandom.hex(4) # Generate a unique 4-character hex code
+      @url.shortened = SecureRandom.hex(4)
   
       if @url.save
         redirect_to @url.original
